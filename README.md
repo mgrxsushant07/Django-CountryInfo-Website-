@@ -1,4 +1,4 @@
-# CountryInfo 🌍
+#Django CountryInfo Website🌍
 
 A Django-based web application that provides information about different countries using Django models and templates. This project demonstrates how to structure a Django app, utilize models for data storage, and render dynamic content with templates.
 
