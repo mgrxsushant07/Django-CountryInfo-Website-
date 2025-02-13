@@ -1,0 +1,54 @@
+{% extends "country_capital_app/base.html" %}
+{% load static %}
+
+{% block mytitle %}
+{{ country|capfirst }}
+{% endblock mytitle %}
+
+
+{% block mystyle %}
+<link rel="stylesheet" href="{% static 'country_capital_app/css/detail.css' %}">
+{% endblock mystyle %}
+
+{% block mybody %}
+<div class="container">
+    <h1>📋 {{ country|capfirst }} Details</h1>
+    
+    <div class="details-card">
+        <div class="detail-item">
+            <div class="detail-label">Country Name</div>
+            <div class="detail-value">{{ country|capfirst }}</div>
+        </div>
+        
+        <div class="detail-item">
+            <div class="detail-label">Capital</div>
+            <div class="detail-value">{{ capital|capfirst }}</div>
+        </div>
+        
+        <div class="detail-item">
+            <div class="detail-label">Population</div>
+            <div class="detail-value population">{{ population }}</div>
+        </div>
+
+        <div class="detail-item">
+            <div class="detail-label">Currency</div>
+            <div class="detail-value">{{ currency|capfirst }}</div>
+        </div>
+        
+        <div class="detail-item">
+            <div class="detail-label">Official Language</div>
+            <div class="detail-value">{{ language|capfirst }}</div>
+        </div>
+        
+        
+
+        <div class="detail-item">
+            <div class="detail-label">Flag</div>
+            <div class="detail-value"><img src="{% static 'country_capital_app/images/' %}{{ country|lower }}.svg" alt="{{ country|capfirst }} flag" height="100" width="100">
+            </div>
+
+    </div>
+
+    <a href="{% url 'home' %}" class="back-link">← Back to Country List</a>
+</div>
+{% endblock mybody %}

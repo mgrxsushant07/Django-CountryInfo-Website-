@@ -1,0 +1,25 @@
+{% extends "country_capital_app/base.html" %}
+{% load static %}
+
+{% block mytitle %}Country Info - Top 20 Population{% endblock mytitle %}
+
+{% block mystyle %}
+<link rel="stylesheet" href="{% static 'country_capital_app/css/home.css' %}">
+{% endblock mystyle %}
+
+{% block mybody %}
+<div class="container">
+    <h1>🌍 Top 20 Most Populated Countries</h1>
+  
+    <div class="country-grid">
+        {% for country in countries %}
+            <div class="country-card">
+                <a href="{{ country }}">{{ country|capfirst }}</a>
+                <!--To put image-->
+                <img src="{% static 'country_capital_app/images/' %}{{ country|lower }}.svg" alt="{{ country|capfirst }} flag" height="30" width="30">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock mybody %}
