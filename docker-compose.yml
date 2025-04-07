@@ -3,7 +3,7 @@ version: '3.9'  # Docker Compose version
 services:
   web:  # Name of the service (like a container)
     build: .  # Build the Docker image using the Dockerfile in the current directory
-    image: django_countryinfo_website_web
+
 
     ports:
       - "8000:8000"  # Map port 8000 on your VPS to port 8000 inside the container
